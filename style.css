@@ -336,9 +336,9 @@ body {
 
 @media (min-width: 769px) {
     #lottie-cooking-container {
-        width: 400px;
-        height: 200px;
-        margin: 0 auto 60px;
+        width: 200px;
+        height: 100px;
+        margin: 0 auto 2px;
     }
 }
 
@@ -1685,5 +1685,6 @@ body {
     }
 
 }
+
 
 
