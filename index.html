@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAJ - Your Partner for Quality & Reliability</title>
+    
+    <!-- IBM Plex Fonts (Latin + Arabic Support) -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Serif:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="Gemini_Generated_Image_69p2od69p2od69p2-removebg-preview.png" alt="RAJ Logo" class="loading-logo">
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo-wrapper-desktop">
+                <a href="#">
+                    <img src="Gemini_Generated_Image_69p2od69p2od69p2-removebg-preview.png" alt="RAJ Logo" class="desktop-logo">
+                </a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="mobile-nav-logo">
+                <img src="Gemini_Generated_Image_69p2od69p2od69p2-removebg-preview.png" alt="RAJ Logo">
+            </div>
+
+            <div class="nav-container">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="#quality"><i class="fas fa-award"></i> Quality</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#blog"><i class="fas fa-newspaper"></i> Blog</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+                    <li class="lang-switch">
+                        <button id="langBtn"><i class="fas fa-globe"></i> EN/AR</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <video class="hero-video video-ready" autoplay loop muted playsinline>
+                <source src="vid/VideoProject .mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <div id="lottie-cooking-container"></div>
+                <h1 class="hero-title fade-in">Your Partner in <br><span>Quality </span></h1>
+                <ul class="hero-usps fade-in">
+                    <li><i class="fas fa-mortar-pestle pulse-icon"></i> Premium Ingredients</li>
+                    <li><i class="fas fa-hand-holding-heart pulse-icon"></i> Expertly Processed</li>
+                    <li><i class="fas fa-truck-fast pulse-icon"></i> Global Delivery</li>
+                </ul>
+                <div class="hero-actions fade-in">
+                    <a href="#contact" class="hero-cta main-btn">Request a Quote</a>
+                    <a href="#products" class="hero-cta secondary-btn">View Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-media reveal-left">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop" alt="Premium Spices" class="main-about-img">
+                        <div class="experience-badge pulse">
+                            <span class="badge-num">20+</span>
+                            <span class="badge-text">Years Of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text reveal-right">
+                    <span class="top-subtitle">Heritage & Trust</span>
+                    <h2 class="section-title">Crafting Excellence <br>In Every Grain</h2>
+                    <p class="about-desc">
+                        With over 20 years of excellence in the spices industry, <strong>RAJ</strong> has established itself as a trusted global partner. We don't just source ingredients; we deliver a legacy of purity and unmatched quality.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> ISO Certified</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> 100% Organic</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> Global Standards</div>
+                    </div>
+                    <a href="#contact" class="main-btn about-cta">Explore Our Story</a>
+                </div>
+            </div>
+
+            <div class="stats-counter">
+                <div class="stat-item reveal-up">
+                    <div class="stat-icon-wrap pulse-red"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-info">
+                        <div class="odo-flex"><div class="odometer" id="years-odometer">0</div><span class="plus">+</span></div>
+                        <p>Years of Legacy</p>
+                    </div>
+                </div>
+                <div class="stat-item reveal-up" style="transition-delay: 0.2s;">
+                    <div class="stat-icon-wrap pulse-red"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <div class="odo-flex"><div class="odometer" id="clients-odometer">0</div><span class="plus">+</span></div>
+                        <p>Satisfied Clients</p>
+                    </div>
+                </div>
+                <div class="stat-item reveal-up" style="transition-delay: 0.4s;">
+                    <div class="stat-icon-wrap pulse-red"><i class="fas fa-globe"></i></div>
+                    <div class="stat-info">
+                        <div class="odo-flex"><div class="odometer" id="countries-odometer">0</div><span class="plus">+</span></div>
+                        <p>Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Slider Section -->
+        <section class="products-section section-card" id="products">
+            <div class="products-slider-container">
+                <div class="products-header-inside">
+                    <span class="products-small-title">OUR TOP PRODUCTS</span>
+                </div>
+
+                <div class="products-slider" id="productsSlider">
+                    <div class="slide active">
+                        <picture>
+                            <source media="(max-width: 992px)" srcset="sweet(2).webp">
+                            <img src="sweet(2).webp" alt="Food Colors" class="product-img">
+                        </picture>
+                        <div class="slide-text-overlay"><h3>Food Colors</h3></div>
+                        <div class="slide-overlay">
+                            <a href="#products" class="btn-view-all-responsive main-btn">VIEW MORE</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <picture>
+                            <source media="(max-width: 992px)" srcset="ice.webp">
+                            <img src="ice (2).webp" alt="Food Ingredients" class="product-img">
+                        </picture>
+                        <div class="slide-text-overlay"><h3>Food Ingredients</h3></div>
+                        <div class="slide-overlay">
+                            <a href="#products" class="btn-view-all-responsive main-btn">VIEW MORE</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <picture>
+                            <source media="(max-width: 992px)" srcset="snac.webp">
+                            <img src="snac (2).webp" alt="Snack Pellets" class="product-img">
+                        </picture>
+                        <div class="slide-text-overlay"><h3>Snack Pellets</h3></div>
+                        <div class="slide-overlay">
+                            <a href="#products" class="btn-view-all-responsive main-btn">VIEW MORE</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Premium Solutions -->
+        <section class="premium-solutions" id="solutions">
+            <div class="premium-container">
+                <div class="solution-row active-reveal">
+                    <div class="solution-image">
+                        <div class="image-3d image-inner">
+                            <img src="br.webp" alt="Bakery">
+                            <div class="lottie-center" id="lottie-bakery"></div>
+                            <div class="deco-icon deco-1"><i class="fas fa-star"></i></div>
+                            <div class="deco-icon deco-2"><i class="fas fa-sparkles"></i></div>
+                        </div>
+                    </div>
+                    <div class="solution-content">
+                        <h6><span>In a squeeze?</span></h6>
+                        <h2>For Bakeries & Creators</h2>
+                        <p>We craft digital experiences that elevate bakeries and creators through visual storytelling and smart web solutions.</p>
+                        <a href="#" class="premium-btn"><span>Learn more</span></a>
+                    </div>
+                </div>
+
+                <div class="solution-row reverse active-reveal">
+                    <div class="solution-image">
+                        <div class="image-3d image-inner">
+                            <img src="s2.webp" alt="Pharma">
+                            <div class="lottie-center" id="lottie-pharma"></div>
+                            <div class="deco-icon deco-3"><i class="fas fa-flask"></i></div>
+                            <div class="deco-icon deco-4"><i class="fas fa-shield-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="solution-content">
+                        <h6><span>From Food to Pharma</span></h6>
+                        <h2>Pharmaceutical Industries</h2>
+                        <p>Precision-driven digital systems built to reflect trust, compliance, and innovation in pharmaceutical industries.</p>
+                        <a href="#" class="premium-btn"><span>Learn more</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Presence -->
+        <section class="global-presence" id="global">
+            <div class="global-container">
+                <div class="global-title-wrapper reveal-up">
+                    <h6 class="section-subtitle">Global Reach</h6>
+                    <h2 class="section-title">Our Presence Across Africa</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="africa-map-wrapper reveal-up" style="transition-delay: 0.3s;">
+                    <div id="africa-leaflet-map"></div>
+                </div>
+
+                <p class="global-desc reveal-up" style="transition-delay: 0.5s;">
+                    We are proud of our strong presence in key markets across Africa, with continuous expansion plans to serve our clients with the highest quality.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column logo-column">
+                <a href="#home" class="footer-logo">
+                    <img src="Gemini_Generated_Image_69p2od69p2od69p2-removebg-preview.png" alt="RAJ Logo">
+                </a>
+                <p class="footer-desc">
+                    Your trusted partner in premium spices and food ingredients with over 20 years of excellence.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#quality">Quality</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+20 123 456 7890</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Industrial Zone, Cairo, Egypt</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAJ. All Rights Reserved. | Crafted with Excellence</p>
+        </div>
+    </footer>
+     
+     <!-- في الـ head (لو مش موجود): -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+<!-- Floating AI Assistant Button -->
+<div class="ai-assistant-btn" id="aiAssistantBtn" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+    <img src="character-0١.png" alt="RAJ AI Assistant" class="ai-avatar">
+    <div class="glow-ring"></div>
+    <div class="tooltip">Chat with RAJ AI</div>
+</div>
+
+<!-- AI Chat Popup -->
+<div class="ai-chat-popup" id="aiChatPopup">
+    <div class="chat-header">
+        <img src="character-0١.png" alt="RAJ AI" class="chat-avatar">
+        <div>
+            <h4>RAJ Assistant</h4>
+            <span class="online-status">Online</span>
+        </div>
+        <button class="close-chat" id="closeChat">&times;</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <div class="message bot-message">
+            <p>مرحبًا! 👋<br>أنا مساعد RAJ الذكي. كيف يمكنني مساعدتك اليوم؟</p>
+        </div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="اكتب رسالتك هنا...">
+        <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
